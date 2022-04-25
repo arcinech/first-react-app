@@ -1,6 +1,57 @@
 import styles from './List.module.scss';
+import Column from '../Column/Column';
+import { useState,  } from 'react';
+import shortid from 'shortid';
+import ColumnForm from '../ColumnForm/ColumnForm'
 
 const List = () => {
+  const [columns, setColumns] = useState([
+    {
+      id: 1,
+      title: 'Books',
+      icon: 'book',
+      cards: [
+        { id: 1, title: 'This is Going to Hurt' },
+        { id: 2, title: 'Interpreter of Maladies' }
+      ]
+    },
+    {
+      id: 2,
+      title: 'Movies',
+      icon: 'film',
+      cards: [
+        { id: 1, title: 'Harry Potter' },
+        { id: 2, title: 'Star Wars' }
+      ]
+    },
+    {
+      id: 3,
+      title: 'Games',
+      icon: 'gamepad',
+      cards: [
+        { id: 1, title: 'The Witcher' },
+        { id: 2, title: 'Skyrim' }
+      ]
+    }
+  ]);
+
+    const addColumn = newColumn => {
+      setColumns([...columns, { id: shortid(), title: newColumn.title, icon: newColumn.icon, cards: [] }]);
+  };
+  
+  const addCard = (newCard, columnId) => {
+    const columnsUpdated = columns.map(column => {
+      if(column.id === columnId)
+        return { ...column, cards: [...column.cards, { id: shortid(), title: newCard.title }]}
+      else
+        return column
+    })
+  
+    setColumns(columnsUpdated);
+  
+  };
+
+
   return (
     <div className= {styles.list}>
       <header className={styles.header}>
@@ -12,19 +63,11 @@ const List = () => {
         </div>
       </header>
       <section className={styles.columns} >
-        <article>
-          <h2 className={styles.title}>Books</h2>
-        </article>
-        <article>
-          <h2 className={styles.title}>Movies</h2>
-        </article>
-        <article>
-          <h2 className={styles.title}>Games</h2>
-        </article>
+        {columns.map(column => <Column key={column.id} id={column.id} title={column.title} icon={column.icon} cards={column.cards} addCard={addCard}/>)}
       </section>
+        <ColumnForm action={addColumn}/>
     </div>
   )
-
 };
 
 export default List;

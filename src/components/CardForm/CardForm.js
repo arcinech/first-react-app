@@ -11,7 +11,7 @@ const CardForm = ({ columnId }) => {
 
     const handleSubmin = e => {
         e.preventDefault();
-        dispatch({type: 'ADD_CARD', newCard: {title, columnId: columnId}});
+        dispatch({type: 'ADD_CARD', newCard: { title, columnId }});
         setTitle('');
     };
 

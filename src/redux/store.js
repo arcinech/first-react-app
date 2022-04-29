@@ -7,7 +7,9 @@ const reducer = (state, action) => {
     case 'ADD_COLUMN':
       return { ...state, columns: [...state.columns, { ...action.newColumn, id: shortid() }]};
     case 'ADD_CARD':
-      return { ...state, cards: [...state.cards, {...action.newCard, id: shortid() }]}
+      return { ...state, cards: [...state.cards, {...action.newCard, id: shortid() }]};
+    case 'UPADTE_SEARCH':
+      return { ...state, stringSearch: action.newSearch}
     default:
       return state;
   }

@@ -1,3 +1,4 @@
+import { addCard } from '../../redux/store';
 import styles from './CardForm.module.scss';
 import { useState } from 'react';
 import TextInput from '../TextInput/TextInput';
@@ -11,7 +12,7 @@ const CardForm = ({ columnId }) => {
 
     const handleSubmin = e => {
         e.preventDefault();
-        dispatch({type: 'ADD_CARD', newCard: { title, columnId }});
+        dispatch(addCard({title, columnId}));
         setTitle('');
     };
 

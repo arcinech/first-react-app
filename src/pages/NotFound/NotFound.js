@@ -1,9 +1,9 @@
 import PageTitle from '../../components/PageTitle/PageTitle';
 
-const WrongPage = () => {
+const NotFound = () => {
   return (
       <PageTitle>404 not found</PageTitle>
   );
 };
 
-export default WrongPage;
+export default NotFound;

@@ -15,7 +15,7 @@ const List = () => {
           <h2 className={styles.title}>Things to do <span>soon!</span></h2>
         </div>
         <div>
-          <p className={styles.desciption} >Interesting Things I want to check out</p>
+          <p className={styles.description} >Interesting Things I want to check out</p>
         </div>
       </header>
       <section className={styles.columns} >

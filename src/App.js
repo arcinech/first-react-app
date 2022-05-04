@@ -5,6 +5,7 @@ import NotFound from './pages/NotFound/NotFound';
 import Container from './components/Container/Container';
 import NavBar from './components/NavBar/NavBar';
 import {Routes, Route} from 'react-router-dom';
+import List from './components/List/List';
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
           <Route path='/' element ={<Home />}/>
           <Route path='/about' element={<About />} />
           <Route path='/favorite' element={<Favorite />}/>
+          <Route path="/list/:listId" element={<List />} />
+
           <Route path='*' element={<NotFound />}/>
         </Routes>
       </Container>

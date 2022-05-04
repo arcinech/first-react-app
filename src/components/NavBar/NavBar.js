@@ -7,11 +7,11 @@ const NavBar = () => {
       <div>
         <NavLink to="/"><i className="fa fa-tasks" aria-hidden="true"></i></NavLink>
       </div>
-      <div>
-        <NavLink className={styles.link} to="/">Home</NavLink>
-        <NavLink className={styles.link} to="/favorite">Favorite</NavLink>
-        <NavLink className={styles.link} to="/about">About</NavLink>
-      </div>
+      <ul className={styles.list}>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/favorite">Favorite</NavLink></li>
+        <li><NavLink to="/about">About</NavLink></li>
+      </ul>
     </nav>
   );
 };

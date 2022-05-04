@@ -14,10 +14,10 @@ const List = () => {
         <div>
           <h2 className={styles.title}>Things to do <span>soon!</span></h2>
         </div>
+      </header>
         <div>
           <p className={styles.description} >Interesting Things I want to check out</p>
         </div>
-      </header>
       <section className={styles.columns} >
         {columns.map(column => 
           <Column 

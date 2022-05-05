@@ -22,6 +22,11 @@
 .list {
     list-style: none;
     display: inline-flex;
+
+    .linkActive {
+      color: $color-warning;
+      transition: all 0.5s;
+    }
     
     li {
       padding: 0 10px;

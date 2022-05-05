@@ -1,11 +1,11 @@
-import {NavLink} from 'react-router-dom'
+import {NavLink, Link} from 'react-router-dom'
 import styles from './NavBar.module.scss'
 
 const NavBar = () => {
   return (
     <nav className={styles.nav}>
       <div>
-        <NavLink to="/"><i className="fa fa-tasks" aria-hidden="true"></i></NavLink>
+        <Link to="/"><i className="fa fa-tasks" aria-hidden="true"></i></Link>
       </div>
       <ul className={styles.list}>
         <li><NavLink to="/">Home</NavLink></li>

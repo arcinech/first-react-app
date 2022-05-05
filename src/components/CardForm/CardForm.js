@@ -1,4 +1,4 @@
-import { addCard } from '../../redux/store';
+import { addCard } from '../../redux/cardsRedux';
 import styles from './CardForm.module.scss';
 import { useState } from 'react';
 import TextInput from '../TextInput/TextInput';

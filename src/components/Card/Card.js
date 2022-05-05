@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import styles from './Card.module.scss';
-import { toggleFavorite } from '../../redux/store';
+import { toggleFavorite } from '../../redux/cardsRedux';
 
 const Card = ({title, id ,isFavorite}) => {
   const dispatch = useDispatch();

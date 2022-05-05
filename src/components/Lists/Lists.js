@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
-import { getAllLists } from "../../redux/store";
+import { getAllLists } from "../../redux/listsRedux";
 import { Link } from 'react-router-dom';
 import styles from './Lists.module.scss';
 
 const Lists =() =>{
   const lists = useSelector(getAllLists);
-
+  console.log(useSelector(getAllLists));
   return (
     <section className={styles.lists}>
       <h2 className={styles.heading}>Browse lists</h2>

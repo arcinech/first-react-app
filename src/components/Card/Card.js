@@ -1,10 +1,16 @@
-import styles from './Card.module.scss'
+import { useDispatch } from 'react-redux';
+import styles from './Card.module.scss';
+import { toggleFavorite } from '../../redux/store';
 
-const Card = props => {
+const Card = ({title, id ,isFavorite}) => {
+  const dispatch = useDispatch();
 
+  const handleClick = () => {
+    dispatch(toggleFavorite(id));
+  };
 
     return (
-        <li className={styles.card}>{props.title}</li>
+        <li className={styles.card}>{title}<i className={isFavorite ? 'fa fa-star' :'fa fa-star-o'} onClick={handleClick}></i></li>
     )
 }
 
